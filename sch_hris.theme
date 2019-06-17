@@ -1,0 +1,109 @@
+<?php
+
+/**
+ * @file
+ * Theme specific functionality.
+ */
+
+//use Drupal\Core\Template\Attribute; // this should be at the top of your MY_THEME.theme file
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Template\Attribute;
+use Drupal\block\Entity\Block;
+use Drupal\user\Entity\User;
+use Drupal\node\Entity\Node;
+use Drupal\file\Entity\File;
+use Drupal\media_entity\Entity\Media;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\taxonomy\Entity\Term;
+
+function sch_hris_preprocess_breadcrumb(&$variables) {
+  if ($variables['breadcrumb']) {
+    $request = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    $page_title = \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+    
+    if (!empty($page_title)) {
+      $variables['breadcrumb'][] = [
+        'text' => $page_title,
+        'attributes' => new Attribute(['class' => ['active']])
+      ];
+    }
+  }
+}
+
+ 
+
+function sch_hris_preprocess_node(&$variables) {
+     $node = $variables['node'];
+  $type = $node->getType();
+   
+  if ($type == "newsletter") {
+      if ($node->hasField('field_banner_image')) {
+      if ($node->get('field_banner_image')) {
+        $logo_id = $node->get('field_banner_image')->getValue()['0']['target_id'];
+        $url_value = get_image_url_fid($logo_id);
+        $variables['logo_url'] = $url_value;
+      }
+    }
+    $components = $node->get('field_skills')->getValue();
+    foreach ($components as $keys => $values) {
+      if ($values['target_id']) {
+        $paragraph = Paragraph::load($values['target_id']);
+     $skilles[$keys]['field_description']  =  $paragraph->field_description->value;
+     $skilles[$keys]['field_teaser'] =    $paragraph->field_teaser->value;
+     $skilles[$keys]['field_title'] =    $paragraph->field_title->value;
+      }
+    }
+     $variables['skills'] = $skilles;
+     
+   ///////////////////// code for upcoming events ///////  
+    $components_upcoming = $node->get('field_upcoming_events')->getValue();
+    foreach ($components_upcoming as $keys => $value) {
+      if ($value['target_id']) {
+     $paragraph_upcoming = Paragraph::load($value['target_id']);
+  
+     $upcoming[$keys]['field_is_new']  =  $paragraph_upcoming->field_is_new->value;
+    $places = explode(',',$paragraph_upcoming->field_place->value);
+    
+     $upcoming[$keys]['field_place'] = $places;
+     $upcoming[$keys]['field_title'] = $paragraph_upcoming->field_title->value;
+     $upcoming[$keys]['field_date'] =   $paragraph_upcoming->field_date->value;
+      $upcoming[$keys]['field_register_url'] =   $paragraph_upcoming->field_register_url->value;
+      }
+    }
+       $variables['upcoming'] = $upcoming;
+
+    if($node->field_show_selected_date->value){
+      $dateValue =$node->field_display_date->value;
+       $time=strtotime($dateValue);
+       $month=date("F",$time);
+       $year=date("Y",$time);
+       $variables['date'] = $month." ".$year;   
+    }else{
+       $dateValue = $node->created->value;
+       $month=date("F",$dateValue);
+       $year=date("Y",$dateValue);
+       $variables['date'] = $month." ".$year;    
+    }
+    
+  }
+ $variables['field_teaser_upcoming_title'] =  $node->field_teaser_upcoming_title->value;
+ $variables['field_events_title'] =  $node->field_events_title->value;
+    
+   $variables['title'] =   $node->title->value;
+}
+
+
+/**
+ * Get image url from fid.
+ */
+function get_image_url_fid($id) {
+  $file = File::load($id);
+  if ($file) {
+    $uri = $file->getFileUri();
+  }
+  if ($uri) {
+    $url = file_create_url($uri);
+  }
+  return $url;
+}
