@@ -1,0 +1,22 @@
+uuid: 6600185d-b0c7-4c00-8fb5-200c18fb3006
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - custom_events
+_core:
+  default_config_hash: RuxBP3o_jzBCGd__jpU7fbTJ1-7BCYJo86DXTKBQsJ8
+id: custom_events_powered
+theme: custom_events
+region: header
+weight: -10
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

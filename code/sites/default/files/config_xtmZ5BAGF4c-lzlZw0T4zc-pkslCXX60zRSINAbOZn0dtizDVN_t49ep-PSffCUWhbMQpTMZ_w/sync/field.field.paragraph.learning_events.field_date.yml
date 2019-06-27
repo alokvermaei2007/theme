@@ -1,0 +1,21 @@
+uuid: be7b56ed-ff4e-4395-bea4-250a4386d478
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_date
+    - paragraphs.paragraphs_type.learning_events
+  module:
+    - datetime
+id: paragraph.learning_events.field_date
+field_name: field_date
+entity_type: paragraph
+bundle: learning_events
+label: date
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

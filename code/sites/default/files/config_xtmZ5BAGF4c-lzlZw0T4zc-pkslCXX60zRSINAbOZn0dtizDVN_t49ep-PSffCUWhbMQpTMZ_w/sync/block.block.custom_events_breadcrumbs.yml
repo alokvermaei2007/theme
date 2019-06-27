@@ -1,0 +1,22 @@
+uuid: 876f8f6a-b58b-451e-84b4-95c8844bea8c
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - custom_events
+_core:
+  default_config_hash: 8hFnuAR_exGkng3kwI3vUa1WD6tx-nvOyhaiIWtwFKk
+id: custom_events_breadcrumbs
+theme: custom_events
+region: breadcrumb
+weight: -100
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

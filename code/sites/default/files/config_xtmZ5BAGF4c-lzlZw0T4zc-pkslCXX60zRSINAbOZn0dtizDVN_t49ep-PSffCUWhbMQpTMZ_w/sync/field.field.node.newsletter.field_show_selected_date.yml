@@ -1,0 +1,23 @@
+uuid: 6f456356-2a66-4dda-94ef-0e846f6bb088
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_show_selected_date
+    - node.type.newsletter
+id: node.newsletter.field_show_selected_date
+field_name: field_show_selected_date
+entity_type: node
+bundle: newsletter
+label: 'Show Selected date'
+description: 'Select if you want to display the selected date below'
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

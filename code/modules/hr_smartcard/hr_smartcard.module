@@ -1,0 +1,72 @@
+<?php
+
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
+use Drupal\hr_smartcard\Controller\TokenCommonFunction;
+use Drupal\file\Entity\File;
+use Drupal\media_entity\Entity\Media;
+use Drupal\paragraphs\Entity\Paragraph;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Template\Attribute;
+
+$config = \Drupal::config('tokenConfigForm.settings');
+$GLOBALS['apikey'] = $config->get('apikey') ? $config->get('apikey') : '3e2a643860f6905418739d26c0fea118';
+$GLOBALS['secretkey'] = $config->get('secretkey');
+$GLOBALS['jwt_token'] = $config->get('jwt_token');
+$GLOBALS['api_url'] = $config->get('api_url')? $config->get('api_url') :'https://schwabsandbox.edcast.com/api/developer/v5/cards';
+$GLOBALS['update_api_url'] = 'https://schwabsandbox.edcast.com/api/developer/v5/cards/';
+/**
+ * Hook Form Alter
+ */
+function hr_smartcard_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+ 
+ 
+    if($form_id == 'node_page_form' || $form_id == 'node_page_edit_form' ){
+       $form['actions']['submit']['#submit'][] = 'hr_smartcard_submit'; 
+    }
+ 
+}
+
+/**
+ * @file
+ * Hook form Submit.
+ */
+function hr_smartcard_submit($form, &$form_state) {
+  $node = $form_state->getFormObject()->getEntity();
+  $imageids =  $form_state->getValue('field_image')[0]['fids'];
+  $user = \Drupal\user\Entity\User::load(\Drupal::currentUser()->id());
+ $email = $user->get('mail')->value;
+  if(!empty($imageids)){
+       $fid_url = get_image_url_fids($imageids[0]);
+  }
+    $url =  $form_state->getValue('field_url')[0]['value'];
+    $title_smartcard =  $form_state->getValue('title')[0]['value'];
+     $createcard = new \Drupal\hr_smartcard\Controller\TokenCommonFunction();
+    if($node->field_ecn->value){
+      $ecn = $node->field_ecn->value;
+      $id = $createcard->smartCardCurl($title_smartcard,$fid_url,$url,$ecn,$email);
+     }else{
+    $ecn = '';
+    $id = $createcard->smartCardCurl($title_smartcard,$fid_url,$url,$ecn,$email);
+    $node->set('field_ecn',$id);
+    $node->save();
+     }
+   
+//   dump($response);exit;
+}
+
+function get_image_url_fids($id) {
+        $file = File::load($id);
+        if ($file) {
+            $uri = $file->getFileUri();
+        }
+        if ($uri) {
+            $url = file_create_url($uri);
+        }
+        return $url;
+    }
+    
+    
+    

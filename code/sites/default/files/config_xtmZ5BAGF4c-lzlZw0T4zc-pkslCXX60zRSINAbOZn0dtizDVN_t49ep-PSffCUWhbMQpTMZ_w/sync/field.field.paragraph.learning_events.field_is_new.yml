@@ -1,0 +1,23 @@
+uuid: e7d60018-678d-4a37-af4a-662d971ac773
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_is_new
+    - paragraphs.paragraphs_type.learning_events
+id: paragraph.learning_events.field_is_new
+field_name: field_is_new
+entity_type: paragraph
+bundle: learning_events
+label: 'Is New'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

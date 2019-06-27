@@ -1,0 +1,25 @@
+uuid: 987412fa-fe58-47fa-b866-860e3a68ac24
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sch_hris
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: sch_hris_branding
+theme: sch_hris
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

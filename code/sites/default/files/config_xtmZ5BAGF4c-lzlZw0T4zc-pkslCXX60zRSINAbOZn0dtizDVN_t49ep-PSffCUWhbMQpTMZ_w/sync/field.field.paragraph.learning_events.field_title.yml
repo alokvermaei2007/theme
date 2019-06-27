@@ -1,0 +1,19 @@
+uuid: 79c4cec0-9a53-49fa-8f1c-7540f56a5e18
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.learning_events
+id: paragraph.learning_events.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: learning_events
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

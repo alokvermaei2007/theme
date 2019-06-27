@@ -1,0 +1,34 @@
+
+// Base
+//
+// These are the default base styles applied to HTML elements.
+//
+// Component classes can override these styles, but if no class applies a style
+// to an HTML element, these styles will be the ones displayed.
+//
+// Style guide: base
+@import "base/**/*.scss";
+
+// Common
+//
+// Common folder includes the common variables that will be used to keep things
+// DRY.  This can also include functions and mixins in the future.
+//
+// Style guide: common
+@import "common/*.scss";
+
+// Components
+//
+// These are the default styles applied to HTML components.
+//
+// Component classes can override these styles, but if no class applies a style
+// to an HTML element, these styles will be the ones displayed.
+//
+// Style guide: components
+@import "components/**/*.scss";
+
+// Bartik Overrides
+//
+// These are overrides for the HRIS POC.
+//
+@import "POC-hris-bartik-overrides.scss"

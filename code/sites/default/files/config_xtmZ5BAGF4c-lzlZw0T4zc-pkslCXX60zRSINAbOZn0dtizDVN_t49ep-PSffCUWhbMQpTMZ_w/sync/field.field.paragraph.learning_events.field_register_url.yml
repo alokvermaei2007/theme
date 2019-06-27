@@ -1,0 +1,21 @@
+uuid: 9bca426b-6ef8-44b4-9ad8-f0b5649fc833
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_register_url
+    - paragraphs.paragraphs_type.learning_events
+  module:
+    - text
+id: paragraph.learning_events.field_register_url
+field_name: field_register_url
+entity_type: paragraph
+bundle: learning_events
+label: 'Register Url'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

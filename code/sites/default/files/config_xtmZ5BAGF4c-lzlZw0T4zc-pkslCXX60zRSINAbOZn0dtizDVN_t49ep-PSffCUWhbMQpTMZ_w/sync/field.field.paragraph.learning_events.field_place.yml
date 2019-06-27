@@ -1,0 +1,21 @@
+uuid: e5dffee3-6d93-4b4f-bf13-3b603ed26698
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_place
+    - paragraphs.paragraphs_type.learning_events
+  module:
+    - text
+id: paragraph.learning_events.field_place
+field_name: field_place
+entity_type: paragraph
+bundle: learning_events
+label: Place
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

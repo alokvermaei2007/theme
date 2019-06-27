@@ -1,0 +1,68 @@
+uuid: 0d80fc64-f396-4018-8a50-3eef5818c6ab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.learning_events.field_date
+    - field.field.paragraph.learning_events.field_is_new
+    - field.field.paragraph.learning_events.field_place
+    - field.field.paragraph.learning_events.field_register_url
+    - field.field.paragraph.learning_events.field_title
+    - field.field.paragraph.learning_events.field_title2
+    - paragraphs.paragraphs_type.learning_events
+  module:
+    - datetime
+    - text
+id: paragraph.learning_events.default
+targetEntityType: paragraph
+bundle: learning_events
+mode: default
+content:
+  field_date:
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_is_new:
+    weight: 1
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_place:
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_register_url:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_title:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_title2:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+hidden:
+  created: true
+  status: true

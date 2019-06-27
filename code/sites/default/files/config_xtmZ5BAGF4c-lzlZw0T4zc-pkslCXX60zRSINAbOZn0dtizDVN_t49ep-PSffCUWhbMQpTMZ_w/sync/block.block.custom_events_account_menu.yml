@@ -1,0 +1,27 @@
+uuid: de8d52f3-94f2-4976-976e-22de2813db9d
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - custom_events
+_core:
+  default_config_hash: NNyhdWw8DyqDR5uBCpmWWmBpOtbvOH9gTuBCyWA_1jI
+id: custom_events_account_menu
+theme: custom_events
+region: header
+weight: 11
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 2
+  expand_all_items: false
+visibility: {  }

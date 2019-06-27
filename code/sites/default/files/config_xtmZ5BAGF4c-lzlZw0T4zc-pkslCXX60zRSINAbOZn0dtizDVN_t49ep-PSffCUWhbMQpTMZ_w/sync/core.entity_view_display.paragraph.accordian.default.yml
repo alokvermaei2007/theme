@@ -1,0 +1,30 @@
+uuid: 72189b7f-c802-4622-b7bf-04a42f36ef2d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.accordian.field_accoridian_title
+    - field.field.paragraph.accordian.field_description
+    - paragraphs.paragraphs_type.accordian
+  module:
+    - text
+id: paragraph.accordian.default
+targetEntityType: paragraph
+bundle: accordian
+mode: default
+content:
+  field_accoridian_title:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_description:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

@@ -1,0 +1,22 @@
+uuid: 82609ba8-2610-4c49-ada9-9ca1c672a3b8
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.id_team
+id: node.id_team.promote
+field_name: promote
+entity_type: node
+bundle: id_team
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

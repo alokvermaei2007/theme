@@ -1,0 +1,189 @@
+/**
+ * @file
+ * Beacon specific colors.
+ *
+ * Version: 1.0
+ * Author: Robert Davis
+ *
+ */
+
+
+$hris-blue: #414f5b;
+
+// Base colors - should never change; prefer not to use directly *****************
+$color-core-blue: #00A0DF;
+$color-digital-core-blue: #037DAE;
+$color-dark-gray: #425563;
+$color-light-gray--white-copy: #657884;
+$color-steel-blue: #6BA4B8;
+$color-steel-blue--white-copy: #3F7186;
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-silver: #D4D4D4;
+$color-dark-silver: #BFBFBF;
+$color-off-white: #F7F7F7;
+$color-lighter-gray: #E0E4E7;
+$color-light-gray: #BCC4CA;
+$color-dimmer-gray: #98A4AE;
+$color-dim-gray: #6D6D6D;
+$color-soft-gray: #818181;
+$color-shady-gray: #666666;
+$color-med-blue: #0094D5;
+$color-powder-blue: #EBF5F7;
+$color-blue-green: #B5D1DB;
+$color-sft-blu: #0066CC;
+$color-picton-blue: #40B8E7;
+$color-indochine: #B95E04;
+$color-mercury: #E7E7E7;
+$color-mystic: #E5EBF1;
+$color-dove-gray: #646464;
+$color-alto: #D9D9D9;
+$color-orient: #005F83;
+$color-confetti: #EDE04B;
+$color-blue-bayoux: #435E7A;
+$color-red-ribbon: #E70D18;
+$color-japanese-laurel: #007900;
+$color-rolling-stone: #74767b;
+$color-open-account-hover: #A04500;
+$color-alto-dark: #D7D7D7;
+
+// Typography related
+$color-light-black: #111111;
+$color-lighter-black: #333333;
+
+// Social Media related
+$color-fb-blue: #3A5998;
+$color-tw-blue: #1FA1F2;
+$color-ln-blue: #0377B5;
+$color-gp-red: #DA4236;
+$color-yt-red: #FF0000;
+
+// Semantic colors - create/edit swatches here **********************
+$color-textdata: $color-black;
+$color-login: $color-black;
+$color-text-retail: $color-lighter-black;
+$color-link--blue: #2d52bb;
+$color-link--blue-on-black: $color-picton-blue;
+$color-orange-button: $color-indochine;
+$color-rules: $color-mercury;
+$color-background: $color-off-white;
+$color-actionable-modules: $color-mystic;
+$color-schwab-bank--dark: $color-dove-gray;
+$color-schwab-bank--light: $color-alto;
+$color-advisor-services--blue: $color-orient;
+$color-trading-services--yellow: $color-confetti;
+$color-intelligent-portfolios--bluegray: $color-blue-bayoux;
+$color-market--red: $color-red-ribbon;
+$color-market--green: $color-japanese-laurel;
+$color-chart-tooltip-btn: $color-rolling-stone;
+
+/* Background Colors */
+.bg-color-core-blue {
+  background-color: $color-core-blue;
+}
+.bg-color-digital-core-blue {
+  background-color: $color-digital-core-blue;
+}
+.bg-color-dark-gray {
+  background-color: $color-dark-gray;
+}
+.bg-color-light-gray--white-copy {
+  background-color: $color-light-gray--white-copy;
+}
+.bg-color-steel-blue {
+  background-color: $color-steel-blue;
+}
+.bg-color-steel-blue--white-copy {
+  background-color: $color-steel-blue--white-copy;
+}
+.bg-color-black {
+  background-color: $color-black;
+}
+.bg-color-white {
+  background-color: $color-white;
+}
+.bg-color-silver {
+  background-color: $color-silver;
+}
+.bg-color-dark-silver {
+  background-color: $color-dark-silver;
+}
+.bg-color-off-white {
+  background-color: $color-off-white;
+}
+.bg-color-lighter-gray {
+  background-color: $color-lighter-gray;
+}
+.bg-color-light-gray {
+  background-color: $color-light-gray;
+}
+.bg-color-dimmer-gray {
+  background-color: $color-dimmer-gray;
+}
+.bg-color-dim-gray {
+  background-color: $color-dim-gray;
+}
+.bg-color-soft-gray {
+  background-color: $color-soft-gray;
+}
+.bg-color-shady-gray {
+  background-color: $color-shady-gray;
+}
+.bg-color-med-blue {
+  background-color: $color-med-blue;
+}
+.bg-color-powder-blue {
+  background-color: $color-powder-blue;
+}
+.bg-color-blue-green {
+  background-color: $color-blue-green;
+}
+.bg-color-sft-blu {
+  background-color: $color-sft-blu;
+}
+.bg-color-picton-blue {
+  background-color: $color-picton-blue;
+}
+.bg-color-indochine {
+  background-color: $color-indochine;
+}
+.bg-color-mercury {
+  background-color: $color-mercury;
+}
+.bg-color-mystic {
+  background-color: $color-mystic;
+}
+.bg-color-dove-gray {
+  background-color: $color-dove-gray;
+}
+.bg-color-alto {
+  background-color: $color-alto;
+}
+.bg-color-orient {
+  background-color: $color-orient;
+}
+.bg-color-confetti {
+  background-color: $color-confetti;
+}
+.bg-color-blue-bayoux {
+  background-color: $color-blue-bayoux;
+}
+.bg-color-red-ribbon {
+  background-color: $color-red-ribbon;
+}
+.bg-color-japanese-laurel {
+  background-color: $color-japanese-laurel;
+}
+.bg-color-rolling-stone {
+  background-color: $color-rolling-stone;
+}
+.bg-color-open-account-hover {
+  background-color: $color-open-account-hover;
+}
+.bg-color-alto-dark {
+  background-color: $color-alto-dark;
+}
+.bg-color-lighter-black {
+  background-color: $color-lighter-black;
+}
+/* End Background Colors */

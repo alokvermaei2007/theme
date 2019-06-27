@@ -1,0 +1,22 @@
+uuid: 120d5e94-31db-4616-8dcf-b5b87ba39b57
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_definition
+    - node.type.id_team
+  module:
+    - text
+id: node.id_team.field_definition
+field_name: field_definition
+entity_type: node
+bundle: id_team
+label: Definition
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

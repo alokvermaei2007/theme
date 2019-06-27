@@ -1,0 +1,20 @@
+uuid: 460598b5-2cdf-4a5c-84fa-8d31ea375096
+langcode: en
+status: true
+dependencies:
+  theme:
+    - sch_hris
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: sch_hris_local_actions
+theme: sch_hris
+region: content
+weight: -20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

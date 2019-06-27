@@ -1,0 +1,299 @@
+// Overrides Bartik (base theme) styles for the HRIS POC.
+
+body {
+  min-height: unset;
+  background-color: $color-white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+// HEADER
+#header {
+  background-color: $hris-blue;
+  background-image: none;
+
+  .section {
+    display: flex;
+    align-items: center;
+  }
+
+  .region-header {
+    padding: 0;
+
+    .block {
+      float: left;
+      margin-top: 0;
+      max-height: 100px;
+    }
+  }
+
+  .site-branding__logo {
+    margin-right: 1em;
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+}
+
+// BREADCRUMB
+
+.region-breadcrumb {
+  padding: 0;
+}
+
+.breadcrumb {
+  @include generate_typography(20px, 24px, $cm-light, $color-white);
+  padding-bottom: 0;
+
+  li::before {
+    font-family: FontAwesome, serif;
+    font-size: 10px;
+    content: "\f054";
+  }
+
+  a {
+    color: $color-white;
+  }
+}
+
+// HAMBURGER MENU
+
+.hamburger-trigger {
+  margin-left: auto;
+  margin-right: 40px;
+  color: $color-white;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &::before {
+    font-family: FontAwesome, serif;
+    font-size: 30px;
+    content: "\f0c9";
+  }
+}
+
+.hamburger-trigger.show {
+  &::before {
+    content: "\f00d";
+  }
+}
+
+.region-hamburger-menu {
+  position: absolute;
+  max-width:500px;
+  right: -500px;
+  background: $color-white;
+  border-left: 1px solid #dcdfe2;
+  border-bottom: 1px solid #dcdfe2;
+  z-index: 100;
+  transition: all 0.5s ease;
+
+  nav .content > ul.menu {
+    padding: 0;
+  }
+
+  nav .content > ul.menu > li.menu-item {
+    padding-top: 0;
+    list-style: none;
+  }
+
+  nav .content > ul.menu li.menu-item--expanded {
+    list-style: none;
+  }
+
+  nav .content > ul.menu > li.menu-item > a {
+    background-color: $hris-blue;
+    color: $color-white;
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    border-bottom: 3px solid #333;
+    box-sizing: border-box;
+
+    &:after {
+      font-family: FontAwesome, serif;
+      content: '\f054';
+      float: right;
+      margin-left: 20px;
+    }
+
+    &:hover {
+      background-color: darken($hris-blue, 5%);
+    }
+  }
+
+  nav .content > ul.menu > li.menu-item > a.is-active {
+    &:after {
+      content: '\f078';
+    }
+  }
+
+  nav .content > ul.menu > li.menu-item ul.menu {
+    display: none;
+  } 
+
+  nav .content > ul.menu > li.menu-item--active-trail ul.menu {
+    display: block;
+  } 
+
+
+  nav .content > ul.menu > li.menu-item li.menu-item a {
+    color: #111;
+  }
+
+}
+
+.region-hamburger-menu.show {
+  right: 0;
+}
+
+// TITLE BAR SECTION
+
+.title-section {
+  background-color: #ecedee;
+  @include generate_typography(20px, 24px, $cm-light);
+  padding: 2px 0 15px;
+}
+
+.region-title-bar {
+  padding: 0 5px;
+}
+
+
+// SUBMENU SECTION
+
+.sub-menu-section {
+  background-color: #e3e3e3;
+}
+
+.sub-menu-section .content {
+  margin-top: 0;
+}
+
+.sub-menu-section ul.menu {
+    padding: .25rem .25em;
+}
+
+.sub-menu-section .menu-item {
+  float: left;
+  list-style: none;
+  padding: 0 5px 0 0;
+  margin: 0 1px;
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.sub-menu-section .menu a {
+  padding: 0.3em 0.8em;
+  color: #333;
+  background: #f5f5f5;
+  display: block;
+  text-decoration: none;
+  text-shadow: 0 1px #eee;
+  border-radius: 4px;
+  margin: 4px 0;
+
+  &.is-active,
+  &:active,
+  &:hover,
+  &:focus {
+    background: $color-white;
+    border-bottom: none;
+  }
+
+  &.is-active,
+  &:active {
+
+    &::before {
+      font-family: FontAwesome, serif;
+      content: '\f00c';
+      color: #4fd24b;
+      padding-right: 5px;
+    }
+  }
+}
+
+// CONTENT AREA BLOCKS
+
+.layout--twocol .block-region-second,
+.layout--threecol-25-50-25 .block-region-first,
+.layout--threecol-25-50-25 .block-region-third {
+
+  h2 {
+    background-color: $hris-blue;
+    color: $color-white;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .content {
+    font-style: italic;
+
+    a {
+      font-style: normal;
+    }
+  }
+
+  h3 {
+    @include generate_typography(20px, 24px, $cm-bold, $hris-blue);
+  margin-bottom: 30px;
+  margin-top: 15px;
+  }
+}
+
+
+// TWEAKS TO 2 and 3-COLUMN LAYOUT
+.layout--threecol-25-50-25 {
+  justify-content: space-between;
+}
+
+.layout--twocol > .layout__region--first {
+    flex: 0 1 75%;
+}
+
+.layout--twocol > .layout__region--second {
+    flex: 0 1 20%;
+}
+
+.layout--twocol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.layout--threecol-25-50-25 .layout__region--first,
+.layout--threecol-25-50-25 .layout__region--third {
+  flex: 0 1 20%;
+}
+
+
+// FOOTER
+
+.site-footer {
+  @include generate_typography(13px, 18px, $cm-light, $color-white);
+  background-color: $hris-blue;
+
+  a {
+    color: $color-white;
+  }
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 0;
+  border-top: none;
+}
+
+.accessibility {
+  display: flex;
+
+  .accessibility_link {
+    margin-left: 5px;
+  }
+
+}

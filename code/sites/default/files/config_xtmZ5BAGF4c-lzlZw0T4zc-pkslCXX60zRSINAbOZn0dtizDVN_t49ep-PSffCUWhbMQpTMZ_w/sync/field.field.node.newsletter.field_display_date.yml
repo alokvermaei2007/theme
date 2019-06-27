@@ -1,0 +1,21 @@
+uuid: 02855f77-fdc2-4d93-9737-ba949e12cf7b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_display_date
+    - node.type.newsletter
+  module:
+    - datetime
+id: node.newsletter.field_display_date
+field_name: field_display_date
+entity_type: node
+bundle: newsletter
+label: 'Display date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

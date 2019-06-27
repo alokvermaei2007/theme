@@ -1,0 +1,22 @@
+uuid: 1635922d-f938-4634-95b8-6cd4ec436ecf
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - custom_events
+_core:
+  default_config_hash: '-Rl4UzLWcNbP0PEI2Ci5O4IuEYk3yK6Xl9DdJaTLO0M'
+id: custom_events_search
+theme: custom_events
+region: header
+weight: -1
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+visibility: {  }

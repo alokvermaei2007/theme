@@ -1,0 +1,19 @@
+uuid: 230b94ab-aae3-42aa-b9ec-b8b1d42a9218
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.page
+  module:
+    - user
+_core:
+  default_config_hash: g1S3_GLaxq4l3I9RIca5Mlz02MxI2KmOquZpHw59akM
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  links:
+    weight: 101
+    region: content
+hidden: {  }

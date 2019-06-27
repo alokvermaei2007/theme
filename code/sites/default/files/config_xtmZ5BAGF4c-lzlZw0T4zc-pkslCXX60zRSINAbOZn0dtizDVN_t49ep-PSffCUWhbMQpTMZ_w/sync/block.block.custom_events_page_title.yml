@@ -1,0 +1,20 @@
+uuid: 09673d60-15fa-41b7-8ff8-21faeed7d99f
+langcode: en
+status: false
+dependencies:
+  theme:
+    - custom_events
+_core:
+  default_config_hash: a1zoZxtJ4zZCNF9GWNbKX-n_z1eaCMUAFgo4VxZ_ZkQ
+id: custom_events_page_title
+theme: custom_events
+region: header
+weight: 0
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

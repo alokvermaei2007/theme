@@ -1,0 +1,120 @@
+/**
+ * @file
+ * Mixins for Beacon theme .
+ *
+ * Version: 1.0
+ * Author: Robert Davis
+ *
+ */
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+@mixin box-sizing($value) {
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+  box-sizing: $value;
+}
+@mixin linear-gradient($direction, $color-stops...) {
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction) == false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient($direction, $color-stops);
+  background: linear-gradient($direction, $color-stops);
+}
+
+@mixin horizontal-dotted-line() {
+  &:after {
+    content: "....................................................................................................................................................................................................";
+    color: $md-gr;
+    display: block;
+    height: 2em;
+    overflow: hidden;
+  }
+}
+
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -o-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select;
+  user-select: $select;
+}
+
+@mixin touch-action($action) {
+  -ms-touch-action: $action;
+  touch-action: $action;
+}
+
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  -o-transform: $transforms;
+  -moz-transform: $transforms;
+  -ms-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  -o-transition:      $transition;
+  -moz-transition:    $transition;
+  -ms-transition:    $transition;
+  transition:         $transition;
+}
+
+@mixin visibility($visibility) {
+  -webkit-backface-visibility: $visibility;
+  -o-backface-visibility: $visibility;
+  -moz-backface-visibility: $visibility;
+  -ms-backface-visibility: $visibility;
+  backface-visibility: $visibility;
+}
+
+@function is-direction($value) {
+  $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+  @return $is-keyword or $is-angle;
+}
+
+// Example Mixins ///////////////
+@mixin opac-color($r, $g, $b, $pertc) {
+  background: rgb($r, $g, $b);
+  background: rgba($r, $g, $b, $pertc);
+}
+
+
+@mixin generate_typography($font-size, $line-height, $fontType:null, $color:null, $transform:null, $letterSpacing:null) {
+  @include fontSize($font-size);
+  line-height: $line-height; 
+  @if $fontType != null {
+    font-family: $fontType;
+  }
+  @if $color != null {
+    color: $color;
+  }
+  @if $transform != null {
+    text-transform: $transform;
+  }
+  @if $letterSpacing != null {
+    letter-spacing: $letterSpacing;
+  }
+}
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    clear: both;
+    content: "";
+  }
+}

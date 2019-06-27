@@ -1,0 +1,37 @@
+uuid: 415984fd-b311-4199-842f-3c0bd43a131e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accordian
+    - node.type.id_team
+    - paragraphs.paragraphs_type.accordian
+  module:
+    - entity_reference_revisions
+id: node.id_team.field_accordian
+field_name: field_accordian
+entity_type: node
+bundle: id_team
+label: Accordian
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      accordian: accordian
+    target_bundles_drag_drop:
+      accordian:
+        enabled: true
+        weight: 4
+      learning:
+        weight: 5
+        enabled: false
+      learning_events:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

@@ -1,0 +1,22 @@
+uuid: 9d7f12f3-39a4-4e1f-8b2f-915a2f16b198
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - custom_events
+_core:
+  default_config_hash: mHlwUVEUZgexqEoFGLghbBsl2C0SmKgZh5KrtvGBc6Y
+id: custom_events_messages
+theme: custom_events
+region: highlighted
+weight: -50
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

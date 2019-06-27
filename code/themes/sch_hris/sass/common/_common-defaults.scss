@@ -1,0 +1,56 @@
+/**
+ * @file
+ * Beacon common default styles.
+ *
+ * Version: 1.0
+ * Author: Robert Davis
+ *
+ */
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $cm-regular;
+  @include fontSize(16px);
+  color: $color-light-black;
+  margin-bottom: 0;
+}
+
+
+// Bootstrap utility class for unpadded rows
+// should move, but leaving out of Bootstrap scss 
+// to keep that directory independent and clean
+.row-no-padding > [class*="col-"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.row-no-margin > [class*="col-"] {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+a {
+  text-decoration: none;
+  color: $color-link--blue;
+  border-bottom: none;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+
+/**
+ * Break out of the bootstrap parent container and go full browser width.
+ */
+.full-width {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  width: 100vw !important;
+}

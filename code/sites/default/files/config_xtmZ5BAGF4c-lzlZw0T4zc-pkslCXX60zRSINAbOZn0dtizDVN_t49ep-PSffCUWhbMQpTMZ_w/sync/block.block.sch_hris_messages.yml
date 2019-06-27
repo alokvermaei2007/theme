@@ -1,0 +1,22 @@
+uuid: d18c753d-533d-4511-ac9c-6d253e33cea2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - sch_hris
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: sch_hris_messages
+theme: sch_hris
+region: highlighted
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

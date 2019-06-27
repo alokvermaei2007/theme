@@ -1,0 +1,21 @@
+uuid: 92062888-12fd-4e5a-ae7c-06ff670d09ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_teaser
+    - paragraphs.paragraphs_type.learning
+  module:
+    - text
+id: paragraph.learning.field_teaser
+field_name: field_teaser
+entity_type: paragraph
+bundle: learning
+label: teaser
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

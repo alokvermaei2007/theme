@@ -1,0 +1,22 @@
+uuid: 2c0fc373-09ac-4d99-8eb0-1826e8ba1515
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - custom_events
+_core:
+  default_config_hash: JzaWkoC9Wrt0iNmNY2nI_xBR_1RB9DDTzmg0PR3aAvc
+id: custom_events_help
+theme: custom_events
+region: highlighted
+weight: -30
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: ca9d6b67-d845-4444-8a70-1b5b16a302ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_description
+    - paragraphs.paragraphs_type.accordian
+  module:
+    - text
+id: paragraph.accordian.field_description
+field_name: field_description
+entity_type: paragraph
+bundle: accordian
+label: 'Accordian Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

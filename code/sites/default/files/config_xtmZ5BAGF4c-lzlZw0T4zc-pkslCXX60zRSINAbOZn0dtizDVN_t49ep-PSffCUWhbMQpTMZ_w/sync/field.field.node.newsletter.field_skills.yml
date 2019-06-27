@@ -1,0 +1,34 @@
+uuid: cdf26b94-d03f-4d41-b31d-69962fc8e176
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_skills
+    - node.type.newsletter
+    - paragraphs.paragraphs_type.learning
+  module:
+    - entity_reference_revisions
+id: node.newsletter.field_skills
+field_name: field_skills
+entity_type: node
+bundle: newsletter
+label: skills
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      learning: learning
+    target_bundles_drag_drop:
+      learning:
+        enabled: true
+        weight: 3
+      learning_events:
+        weight: 4
+        enabled: false
+field_type: entity_reference_revisions

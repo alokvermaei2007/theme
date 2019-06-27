@@ -1,0 +1,9 @@
+uuid: 7a969330-7a66-43b8-9ab7-8f758505e068
+langcode: en
+status: true
+dependencies: {  }
+id: learning
+label: learning
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

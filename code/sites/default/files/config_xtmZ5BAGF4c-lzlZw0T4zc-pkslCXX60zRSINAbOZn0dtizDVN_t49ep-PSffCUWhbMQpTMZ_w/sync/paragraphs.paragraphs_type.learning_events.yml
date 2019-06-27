@@ -1,0 +1,9 @@
+uuid: fc8406f5-685e-4ed6-99ac-5af7915a0dbe
+langcode: en
+status: true
+dependencies: {  }
+id: learning_events
+label: 'learning events'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

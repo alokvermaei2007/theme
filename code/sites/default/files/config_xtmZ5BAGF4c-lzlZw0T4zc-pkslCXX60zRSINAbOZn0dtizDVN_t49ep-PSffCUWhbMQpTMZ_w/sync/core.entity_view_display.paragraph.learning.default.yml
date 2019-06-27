@@ -1,0 +1,47 @@
+uuid: 85dc16b8-7069-4603-aa85-1005c9a75bc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.learning.field_description
+    - field.field.paragraph.learning.field_teaser
+    - field.field.paragraph.learning.field_title
+    - field.field.paragraph.learning.field_title2
+    - paragraphs.paragraphs_type.learning
+  module:
+    - text
+id: paragraph.learning.default
+targetEntityType: paragraph
+bundle: learning
+mode: default
+content:
+  field_description:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_teaser:
+    weight: 1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_title2:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }
