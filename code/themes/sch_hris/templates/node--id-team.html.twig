@@ -79,19 +79,15 @@
 %}
 {{ attach_library('classy/node') }}
 {% set counter = 0 %}
-
+{% set str = 'page' %}
 <article{{ attributes.addClass(classes) }}>
-    <header>
-
-
-    </header>
-    <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
+    {% for key, field_item in content.field_chapters %}
+    {% if key matches '/^\\d+$/' %}
+    {% set counter = counter + 1 %}
+    <div{{ content_attributes.addClass('node__content', 'clearfix') }} data-id = "{{ str ~ counter }}"  id="{{ str ~ counter }}">
         <section class="wrapper section-top">
             <div class="section-top__left">
-                <div class="section-top__pagination">
-                  {% for key, field_item in content.field_chapters %}
-                    {% if key matches '/^\\d+$/' %}
-                      {% set counter = counter + 1 %}
+                <div class="section-top__pagination" onclick="moveToNextPage(2)">
                       Lesson {{ counter }} of {{ lesson }}
                       <i class="section-top__arrow"></i>
                 </div>
