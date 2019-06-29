@@ -87,7 +87,7 @@
     <div{{ content_attributes.addClass('node__content', 'clearfix') }} data-id = "{{ str ~ counter }}"  id="{{ str ~ counter }}">
         <section class="wrapper section-top">
             <div class="section-top__left">
-                <div class="section-top__pagination" onclick="moveToNextPage(2)">
+                <div class="section-top__pagination" onclick="moveToNextPage({{ lesson }})">
                       Lesson {{ counter }} of {{ lesson }}
                       <i class="section-top__arrow"></i>
                 </div>
@@ -104,13 +104,6 @@
         <!-- ======================  END SECTION TOP ========================== -->
 
         <!-- ======================  START SECTION ACCORDIAN ========================== -->
-        <!-- THIS SCRIPT IS NEEDED TO TOGGLE  CLASS -->
-        <script>
-            function toggleClass(targetElement) {
-                var sourceID = targetElement.getAttribute("data-toggle");
-                document.getElementById(sourceID).classList.toggle("open");
-            }
-        </script>
 
         <section class="wrapper section-top">
              {% for index, accordion in field_item['#paragraph'].field_accordion %}
@@ -427,3 +420,34 @@
 
 /* ======================  END CARD BLOCK ==========================  */
 </style>
+<script>
+;
+((window) => {
+    /* THIS SCRIPT IS NEEDED TO TOGGLE  CLASS */
+    window.toggleClass = (targetElement) => {
+        var sourceID = targetElement.getAttribute("data-toggle");
+        document.getElementById(sourceID).classList.toggle("open");
+    }
+
+
+    /* THIS SCRIPT IS NEEDED FOR PAGINATION  CLASS */
+    window.currentPage = window.currentPage || 1;
+    window.moveToNextPage = (totalCount) => {
+        window.currentPage += 1;
+        if (window.currentPage > totalCount) {
+            window.currentPage = 1;
+        }
+        const targetedPage = 'page' + window.currentPage;
+        [...document.querySelectorAll("[data-page]")]
+        .map((element) => {
+            if (element.getAttribute("data-page") === targetedPage ||
+                element.getAttribute('id') === targetedPage) {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        });
+    }
+
+})(window);
+</script>
