@@ -83,37 +83,14 @@ function sch_hris_preprocess_node(&$variables) {
        $year=date("Y",$dateValue);
        $variables['date'] = $month." ".$year;    
     }
-   // $variables['field_disclaimer_text'] =  $node->field_disclaimer_text->value;
-   //$variables['uri'] =  $node->field_link_bottom->getValue()[0]['uri'];
-  //$variables['uri_title']  =  $node->field_link_bottom->getValue()[0]['title'];
   
  $variables['field_teaser_upcoming_title'] =  $node->field_teaser_upcoming_title->value;
  $variables['field_events_title'] =  $node->field_events_title->value;
     
    $variables['title'] =   $node->title->value;
-  }elseif($type == "id_team"){
-      $variables['title'] =  $node->title->value;
- $variables['body'] =  $node->body->value;  
- if ($node->hasField('field_top_image')) {
-      if ($node->get('field_top_image')) {
-        $logo_id = $node->get('field_top_image')->getValue()['0']['target_id'];
-        $url_value = get_image_url_fid($logo_id);
-        $variables['logo_url'] = $url_value;
-      }
-    }
-    
-    $components_accordian = $node->get('field_accordian')->getValue();
-    foreach ($components_accordian as $keys => $value) {
-      if ($value['target_id']) {
-     $paragraph_upcoming = Paragraph::load($value['target_id']);
-     $upcoming[$keys]['field_accoridian_title']  =  $paragraph_upcoming->field_accoridian_title->value;
-     $upcoming[$keys]['field_description'] = $paragraph_upcoming->field_description->value;
-      }
-    }
-       $variables['upcoming'] = $upcoming;
-      
+  } elseif($type == "id_team"){
+    $variables['lesson'] = count($node->field_chapters->getValue());  
   }
-
 }
 
 
